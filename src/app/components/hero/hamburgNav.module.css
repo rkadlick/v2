@@ -1,0 +1,94 @@
+.hamburgMenu {
+	height: 100%;
+}
+
+.hamburgMenu > input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+  right: 17px;
+}
+
+.hamburgLine1, .hamburgLine2, .hamburgLine3{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: var(--primary-color);
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 0px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.hamburgLine1{
+  transform-origin: 0% 0%;
+}
+
+.hamburgLine2{
+  transform-origin: 0% 100%;
+}
+
+.hamburgIcon{
+	display: block;
+	cursor: pointer;
+	float: right;
+	margin-top: 5px;
+	margin-right: 20px;
+}
+
+.hamburgList{
+	text-align: end;
+	height: 5000vh;
+	background-color: var(--bg-secondary-color);
+	padding: 4rem 0 0 2rem;
+	box-shadow: -10px 21px 20px -14px var(--bg-shadow);
+	animation: test 5s;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	list-style-type: none;
+}
+
+.hamburgList > div {
+	align-self: flex-end;
+	margin: 0 20px 20px 0;
+}
+
+.hamburgList > li {
+	align-self: flex-start;
+	margin: 1rem 0px;
+}
+
+.hamburgNavLink{
+	text-decoration: none;
+}
+
+.hamburgNavLink:hover {
+	color: var(--primary-color);
+}
+
+.hamburgNavNumber {
+	color: var(--primary-color);
+}
+
+@media only screen and (min-width: 768px) {
+	.hamburgMenu{
+		display: none;
+	}
+}

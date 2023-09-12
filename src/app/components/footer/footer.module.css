@@ -1,0 +1,50 @@
+.footer{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 3rem;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.footerLink{
+	text-decoration: none;
+	color: var(--text-secondary-color);
+	font-size: var(--fz-sm);
+	align-self: center;
+}
+
+.footerLink:hover{
+	color: var(--primary-color)
+}
+
+.name{
+	color: var(--primary-color);
+}
+
+.iconList{
+	align-self: center;
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+}
+
+.iconList > li {
+	text-align: center;
+}
+
+.iconListIcon{
+	width: 25px;
+	height: 25px;
+	margin-bottom: 45px;
+}
+
+.iconListIcon:hover{
+	color: var(--primary-color);
+}
+
+@media only screen and (min-width: 600px) {
+	.iconList{
+		display: none;
+	}
+}

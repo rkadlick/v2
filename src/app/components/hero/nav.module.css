@@ -1,0 +1,81 @@
+@keyframes slideUp {
+	0% {
+		transform: translateY(0);
+	}
+
+	100% {
+		transform: translateY(-100px);
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(-100px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.navbar {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 20px;
+	top: 0;
+	background: var(--bg-secondary-color);
+	z-index: 200;
+	height: 70px;
+	box-shadow: 0 10px 30px -15px var(--bg-shadow);
+	position: fixed;
+}
+
+.scrollUp {
+	animation-name: slideDown;
+	animation-duration: 1s;
+}
+
+.scrollDown {
+	animation: slideUp 1s forwards;
+	transition: 10s;
+}
+
+.logo {
+	display: block;
+	width: 45px;
+}
+
+.navMenu {
+	display: flex;
+	list-style-type: none;
+}
+
+.navLink {
+	display: flex;
+	align-items: center;
+	font-size: var(--fz-xs);
+	margin: 0 10px;
+	padding: 20px;
+	text-decoration: none;
+}
+
+.navLink:hover {
+	color: var(--primary-color);
+}
+
+.navNumber {
+	color: var(--primary-color);
+	margin-right: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+	.navMenu{
+		display: none;
+	}
+	.navbar{
+		padding-right: 0;
+	}
+}

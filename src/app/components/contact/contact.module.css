@@ -1,0 +1,103 @@
+.contactContainer{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-left: 5rem;
+}
+
+.contactTitle{
+	justify-content: end;
+	flex: 0 0 100%;
+}
+
+.contactTitle::before {
+	content: '';
+	display:block;
+	border-bottom: 1px solid var(--text-secondary-color);
+	width: 150px;
+	position: relative;
+	margin-right: 30px;
+}
+
+.contactLogo{
+	flex: 0 0 50%;
+	display: flex;
+}
+
+.formContainer{
+	flex: 0 0 50%;
+}
+
+.contactText{
+	text-align: center;
+	margin: 5px auto 30px auto;
+	color: var(--text-primary-color);
+}
+
+
+.contactForm {
+	display: flex;
+	flex-direction: column;
+	width: 85%;
+	margin: auto;
+	gap: 25px;
+}
+
+.contactMessage, .contactName, .contactEmail{
+	padding: 20px;
+	font-size: 1rem;
+	background-color: var(--bg-secondary-color);
+	border: var(--text-primary-color) solid 1px;
+
+}
+
+.contactMessage:focus, .contactName:focus, .contactEmail:focus{
+	border: var(--primary-color) solid 1px;
+	outline: var(--primary-color) solid;
+}
+
+.contactSubmit {
+	margin: auto;
+	cursor: pointer;
+	padding: 1.25rem 1.75rem;
+	background-color: var(--bg-primary-color);
+	border: var(--primary-color) solid 2px;
+	color: var(--primary-color);
+	transition: all 0.5s;
+}
+
+.contactSubmit:hover{
+	background-color: var(--primary-color);
+	color: var(--bg-primary-color);
+	box-shadow: 5px 5px var(--bg-shadow);
+}
+
+.contactSubmit:active{
+	background-color: var(--primary-color);
+	color: var(--bg-primary-color);
+	box-shadow: 5px 5px var(--bg-shadow) inset;
+}
+
+@media only screen and (max-width: 768px) {
+	.contactContainer{
+		padding: 0 5rem;
+		flex-direction: column;
+	}
+	.contactLogo{
+		width: 60%;
+		margin: auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.contactLogo{
+		width: 70%;
+	}
+	.contactContainer{
+		padding: 0 1rem;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+
+}

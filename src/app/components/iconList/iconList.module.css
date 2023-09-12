@@ -1,0 +1,42 @@
+.iconListContainer {
+	width: 40px;
+	position: fixed;
+	bottom: 0px;
+	left: 40px;
+	right: auto;
+	z-index: 10;
+	color: var(--text-secondary-color);
+}
+
+.iconList{
+	list-style-type: none;
+}
+
+.iconList > li {
+	text-align: center;
+}
+
+.iconList::after{
+	content: "";
+	display: block;
+	width: 1px;
+	height: 90px;
+	margin: 0px auto;
+	background-color: var(--text-secondary-color);
+}
+
+.iconListIcon{
+	width: 25px;
+	height: 25px;
+	margin-bottom: 45px;
+}
+
+.iconListIcon:hover{
+	color: var(--primary-color);
+}
+
+@media only screen and (max-width: 600px) {
+	.iconListContainer{
+		display: none;
+	}
+}
