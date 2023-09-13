@@ -24,7 +24,7 @@
 	outline: var(--primary-color) solid;
 }
 
-.contactSubmit {
+.contactSubmit, .contactSent {
 	margin: auto;
 	cursor: pointer;
 	padding: 1.25rem 1.75rem;
@@ -34,14 +34,26 @@
 	transition: all 0.5s;
 }
 
+.contactSent {
+	cursor: default;
+}
+
 .contactSubmit:hover{
 	background-color: var(--primary-color);
 	color: var(--bg-primary-color);
 	box-shadow: 5px 5px var(--bg-shadow);
 }
 
-.contactSubmit:active{
+.contactSubmit:active, .contactSending{
 	background-color: var(--primary-color);
 	color: var(--bg-primary-color);
 	box-shadow: 5px 5px var(--bg-shadow) inset;
+}
+
+.contactSending{
+	margin: auto;
+	cursor: pointer;
+	padding: 1.25rem 1.75rem;
+	transition: all 0.5s;
+	border: var(--primary-color) solid 2px;
 }
