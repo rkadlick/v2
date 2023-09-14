@@ -13,8 +13,6 @@ function HamburgNav() {
 
 	const showSidebar = () => setSidebar(!sidebar);
 
-	console.log(sidebar);
-
 	return (
 		<div className={styles.hamburgMenu}>
 			<input type='checkbox' onChange={showSidebar} />

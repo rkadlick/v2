@@ -13,7 +13,7 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting, isSubmitSuccessful, dirtyFields },
     reset,
     setError,
   } = useForm<TSignUpSchema>({
@@ -67,6 +67,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.contactForm}>
+		<label className={dirtyFields.name ? styles.labelShow : styles.formLabel} htmlFor="name">Name</label>
       <input
         {...register("name")}
 		id="name"
@@ -78,6 +79,8 @@ export default function ContactForm() {
       {errors.name && (
         <p className={styles.error}>{`${errors.name.message}`}</p>
       )}
+
+	  <label className={dirtyFields.email ? styles.labelShow : styles.formLabel} htmlFor="email">Email</label>
       <input
         {...register("email")}
 		id="email"
@@ -89,6 +92,7 @@ export default function ContactForm() {
       {errors.email && (
         <p className={styles.error}>{`${errors.email.message}`}</p>
       )}
+	  <label className={dirtyFields.message ? styles.labelShow : styles.formLabel} htmlFor="message">Message</label>
       <textarea
         {...register("message")}
 		id="message"
@@ -120,7 +124,6 @@ export default function ContactForm() {
         <button
           className={heading.className + " " + styles.contactSubmit}
           type="submit"
-          disabled={isSubmitting}
         >
           Send
         </button>

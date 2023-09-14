@@ -11,6 +11,27 @@
 	gap: 25px;
 }
 
+@keyframes easeIn {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+.formLabel{
+	margin: -5px 0 -20px 0;
+	font-size: var(--fz-xs);
+	opacity: 0;
+}
+
+.labelShow{
+	margin: -5px 0 -20px 0;
+	font-size: var(--fz-xs);
+	animation: easIn 3s;
+}
+
 .contactMessage, .contactName, .contactEmail{
 	padding: 20px;
 	font-size: 1rem;
