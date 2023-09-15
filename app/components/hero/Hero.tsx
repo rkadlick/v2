@@ -6,7 +6,7 @@ import Rocket from './Rocket'
 import Image from 'next/image'
 import { heading, monospace, subheading } from '@/styles/fonts';
 import styles from './hero.module.css'
-import useScrollDirection from '@/app/hooks/useScrollDirection';
+import useScrollDirection from '../../hooks/useScrollDirection';
 
 function Hero() {
 

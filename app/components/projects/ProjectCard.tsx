@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import testImg from "../../../images/intro-image.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { monospace, subheading } from "@/fonts";
@@ -64,7 +63,7 @@ function ProjectCard(props: { key: number; project: Project }) {
       <div className={styles.projectDisplay}>
         <Image
           className={styles.projectImage}
-          src={props.project.image || testImg}
+          src={props.project.image || ""}
           alt="test"
           width={640}
           height={360}

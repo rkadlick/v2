@@ -1,13 +1,13 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import logo from '../../../images/tester.png'
+import logo from '../../images/tester.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { monospace } from '@/fonts'
 import styles from './nav.module.css'
 import ThemeToggle from './ThemeToggle'
-import useScrollDirection from '@/app/hooks/useScrollDirection'
+import useScrollDirection from '../../hooks/useScrollDirection'
 import HamburgNav from './HamburgNav'
 
 function Nav() {

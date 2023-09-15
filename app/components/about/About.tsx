@@ -1,7 +1,7 @@
 import React from 'react'
 import { heading, monospace } from '@/styles/fonts';
 import Image from 'next/image'
-import testImg from '../../../images/intro-image.svg'
+import testImg from '../../images/intro-image.svg'
 import styles from './about.module.css'
 
 function About() {

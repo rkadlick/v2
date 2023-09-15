@@ -19,9 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@/fonts": ["./src/styles/fonts"],
-      "@/hooks" : ["./src/app/hooks"],
+      "@/*": ["./app/*"],
+      "@/fonts": ["./app/styles/fonts"],
+      "@/hooks" : ["./app/hooks"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },

@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
-import SunIcon from '../../../images/SunIcon'
-import MoonIcon from '../../../images/MoonIcon'
+import SunIcon from '../../images/SunIcon'
+import MoonIcon from '../../images/MoonIcon'
 import styles from './themeToggle.module.css'
 
 const ThemeSwitch = () => {

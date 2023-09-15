@@ -49,7 +49,7 @@ export const Project = defineDocumentType(() => ({
 }))
 
 export default makeSource({
-  contentDirPath: "./src/content",
+  contentDirPath: "./app/content",
   documentTypes: [Project],
   mdx: {
     remarkPlugins: [remarkGfm],
