@@ -46,6 +46,7 @@
 }
 
 .contactSubmit, .contactSent {
+	border-radius: 8px;
 	margin: auto;
 	cursor: pointer;
 	padding: 1.25rem 1.75rem;
@@ -72,6 +73,7 @@
 }
 
 .contactSending{
+	border-radius: 8px;
 	margin: auto;
 	cursor: pointer;
 	padding: 1.25rem 1.75rem;

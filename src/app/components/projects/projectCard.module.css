@@ -5,10 +5,17 @@
 	justify-content: space-between;
 	width: 100%;
 	gap: 15px;
-	background-color: var(--bg-secondary-color);
 	padding: 2rem;
-	margin-bottom: 1rem;
+	margin-bottom: 2.5rem;
 	border-radius: 8px;
+}
+
+.projectCard:nth-child(3){
+	flex-direction: row-reverse;
+}
+
+.projectCard:nth-child(3) > .projectInfo > .projectTextContainer {
+	align-self: flex-end;
 }
 
 .projectInfo {
@@ -17,16 +24,16 @@
 	flex-direction: column;
 }
 
-.projectLinks{
-	align-self: flex-end;
+.projectHeader{
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 	gap: 15px;
 }
 
 .projectIcon{
-	width: 20px;
-	height: 20px;
+	width: 26px;
+	height: 26px;
 }
 
 .projectIcon:hover{
@@ -49,55 +56,43 @@
 	color: var(--primary-color);
 }
 
-.projectText {
-	margin-bottom: 15px;
+.projectTextContainer {
+	margin-bottom:15px;
+	background-color: var(--bg-secondary-color);
+	width: 150%;
+	z-index: 1;
+	padding: 2rem;
+	border-radius: 8px;
+}
+
+.projectText:not(:first-child){
+	margin-top: 15px;
 }
 
 .projectDisplay {
 	flex: 0 0 66.66%;
 	border-radius: 8px;
-	max-width: 63%;
+	max-width: 100%;
 }
+
 
 .projectImage {
 	border-radius: 8px;
 	margin: auto;
 	width: 100%;
-}
-
-.imgOverlay{
-	width: 100%;
 	height: 100%;
 }
 
-@media only screen and (max-width: 850px) {
-	.projectCard {
+@media only screen and (max-width: 800px) {
+
+	.projectCard{
 		flex-direction: column-reverse;
-		margin: auto;
-		padding: 1rem;
-		margin-bottom: 2rem;
 	}
-	.projectDisplay{
-		max-width: 100%;
+	.projectCard:nth-child(3){
+		flex-direction: column-reverse;
 	}
-	.projectImage {
-		margin: 10px 0;
-		max-width: 100%;
-	}
-	.projectText {
-		margin-bottom: 0;
-	}
-	.projectTech {
-		margin-bottom: 0px;
-		margin-top: 15px;
+	.projectTextContainer{
+		width: 100%;
 	}
 }
 
-@media only screen and (max-width: 600px) {
-	.projectImage{
-		height: 240px;
-	}
-}
-@media only screen and (max-width: 450px) {
-
-}

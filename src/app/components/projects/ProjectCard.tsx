@@ -9,13 +9,23 @@ import styles from "./projectCard.module.css";
 import { Project } from "contentlayer/generated";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
+function createParagraphs(text: String) {
+  const paragraphs = text.split('\n').map((paragraph, index) => (
+    <p key={index} className={styles.projectText}>{paragraph}</p>
+  ));
+  return paragraphs;
+}
+
 function ProjectCard(props: { key: number; project: Project }) {
 
   console.log(props.project.image);
   return (
     <div className={styles.projectCard}>
       <div className={styles.projectInfo}>
-	  <div className={styles.projectLinks}>
+	  <div className={styles.projectHeader}>
+    <h4 className={subheading.className + " " + styles.projectName}>
+          {props.project.title}
+        </h4>
       {props.project.linkSource && (
         <Link
           href={props.project.linkSource}
@@ -37,10 +47,9 @@ function ProjectCard(props: { key: number; project: Project }) {
 		
       )}
 	</div>
-        <h4 className={subheading.className + " " + styles.projectName}>
-          {props.project.title}
-        </h4>
-        <p className={styles.projectText}>{props.project.body.raw}</p>
+      <div className={styles.projectTextContainer}>
+        {createParagraphs(props.project.body.raw)}
+      </div>
         <div className={styles.projectTech}>
           {props.project.tech?.map((tech, index) => (
             <div
@@ -53,7 +62,6 @@ function ProjectCard(props: { key: number; project: Project }) {
         </div>
       </div>
       <div className={styles.projectDisplay}>
-        <div className={styles.imgOverlay}></div>
         <Image
           className={styles.projectImage}
           src={props.project.image || testImg}
