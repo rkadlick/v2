@@ -1,4 +1,3 @@
-import React from 'react'
 import { heading, monospace } from '@/styles/fonts';
 import Image from 'next/image'
 import testImg from '../../images/intro-image.svg'

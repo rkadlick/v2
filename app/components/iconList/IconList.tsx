@@ -21,7 +21,7 @@ function IconList() {
 					<Link href="https://www.linkedin.com/in/ryankadlick/" target='_blank'> <FontAwesomeIcon className={styles.iconListIcon} icon={faLinkedin} /></Link>
 				</li>
 				<li>
-					<Link href="#" target='_blank'><FontAwesomeIcon className={styles.iconListIcon} icon={faFile} /></Link>
+					<Link href="./resume.pdf" target='_blank'><FontAwesomeIcon className={styles.iconListIcon} icon={faFile} /></Link>
 				</li>
 			</ul>
 		</div>	

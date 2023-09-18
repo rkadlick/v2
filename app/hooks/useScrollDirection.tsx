@@ -4,7 +4,7 @@ const SCROLL_DOWN = 'down';
 
 import { useState, useEffect } from 'react';
 
-const useScrollDirection = ({ initialDirection } = {}) => {
+const useScrollDirection = ({ initialDirection = 'up'} = {}) => {
 	const [scrollDir, setScrollDir] = useState(initialDirection);
 
 	useEffect(() => {

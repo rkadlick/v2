@@ -54,6 +54,7 @@
 	text-decoration: none;
 	margin-right: 15px;
 	color: var(--primary-color);
+	font-size: var(--fz-sm);
 }
 
 .projectTextContainer {

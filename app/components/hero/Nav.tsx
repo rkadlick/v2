@@ -39,7 +39,7 @@ function Nav() {
 	}
 
 	return (
-		<div className={navClass()} scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
+		<div className={navClass()}>
 			<div>
 				<Link href=""><Image alt="logo" src={logo} className={styles.logo} width={45} height={45} /></Link>
 			</div>
