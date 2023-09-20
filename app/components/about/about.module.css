@@ -23,7 +23,7 @@
 
 .aboutImage {
 	flex: 0 0 50%;
-	width: 100%;
+	width: 80%;
 	height: 20%;
 }
 
@@ -43,7 +43,7 @@
 	}
 	.aboutImage{
 		flex: 0 0 100%;
-		width: 80%;
+		width: 60%;
 		margin: 0 auto 1rem auto;
 	}
 	.aboutText{

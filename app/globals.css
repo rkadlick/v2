@@ -71,12 +71,14 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+  
 }
 
 html{
   color: var(--text-secondary-color);
   background-color: var(--bg-primary-color);
   scroll-behavior: smooth;
+  transition: all 0.5s ease-in-out;
 }
 
 a{
