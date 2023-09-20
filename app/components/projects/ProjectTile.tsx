@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import Link from "next/link";
 import { subheading, monospace } from "@/styles/fonts";
@@ -6,10 +8,31 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import styles from "./projectTile.module.css";
 import { Project } from "contentlayer/generated";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion"
+import { useInView } from 'react-intersection-observer';
 
-function ProjectTile(props: { key: number; project: Project }) {
+function ProjectTile(props: { key: number; project: Project; id: number }) {
+
+  const childVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Animation triggers only once when it comes into view
+  });
+  const delay = props.id * 0.4;
+
   return (
-    <div className={styles.projectTile}>
+    <motion.div 
+      initial="hidden"
+      ref={ref}
+      animate={inView ? "visible" : "hidden"}
+      variants={childVariants}
+      transition={{ duration: 1, delay }}
+      className={styles.projectTile}
+
+    >
 		<div className={styles.projectTileLinks}>
       {props.project.linkSource && (
         <Link
@@ -41,7 +64,7 @@ function ProjectTile(props: { key: number; project: Project }) {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

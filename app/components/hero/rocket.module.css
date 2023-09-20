@@ -81,77 +81,94 @@
 	stroke: var(--text-primary-color)
 }
 
-/*
-.rocketLineT{
-	animation: lines linear 3s infinite;
-	stroke-dasharray: 15 1000;
-	opacity: 0;
-}
-
-.rocketLineB{
-	animation: lines linear 3s infinite 1s;
-	stroke-dasharray: 15 1000;
-	opacity: 0;
-}
-
-.flameLineT{
-	animation: flameLines linear 1s infinite 0.5s;
-	stroke-dasharray: 20 1000;
-	opacity: 0;
-}
-
-.flameLineB{
-	animation: flameLines linear 1s infinite;
-	stroke-dasharray: 20 1000;
-	opacity: 0;
-}
-
-.rocket{
-	animation: rotate linear 3s infinite;
-	transform-origin: center;
-}
-
-.flames{
-	animation: enlarge linear 3s infinite;
-	transform-origin: 132px 207px;
-}
-
-.plusStarTl{
-	animation: diagonally linear 2s infinite;
+	.rocketLineT{
+		opacity: 0;
+	}
 	
-}
-
-.plusStarTs{
-	animation: diagonally linear 3s infinite;
+	.rocketLineB{
+		opacity: 0;
+	}
 	
-}
-
-.plusStarBl{
-	animation: diagonally linear 2.5s infinite;
+	.flameLineT{
+		opacity: 0;
+	}
 	
-}
+	.flameLineB{
+		opacity: 0;
+	}
 
-.plusStarBs{
-	animation: diagonally linear 3.5s infinite;
+
+@media (prefers-reduced-motion: no-preference) {
+	.rocketLineT{
+		animation: lines linear 3s infinite;
+		stroke-dasharray: 15 1000;
+		opacity: 0;
+	}
 	
-}
-
-.circleStarTs{
-	animation: diagonally linear 3s infinite;
+	.rocketLineB{
+		animation: lines linear 3s infinite 1s;
+		stroke-dasharray: 15 1000;
+		opacity: 0;
+	}
 	
-}
-
-.circleStarTl{
-	animation: diagonally linear 2s infinite;
+	.flameLineT{
+		animation: flameLines linear 1s infinite 0.5s;
+		stroke-dasharray: 20 1000;
+		opacity: 0;
+	}
 	
-}
-
-.circleStarBs{
-	animation: diagonally linear 3s infinite;
+	.flameLineB{
+		animation: flameLines linear 1s infinite;
+		stroke-dasharray: 20 1000;
+		opacity: 0;
+	}
 	
-}
-
-.circleStarBl{
-	animation: diagonally linear 3.5s infinite;
-}
-*/
+	.rocket{
+		animation: rotate linear 3s infinite;
+		transform-origin: center;
+	}
+	
+	.flames{
+		animation: enlarge linear 3s infinite;
+		transform-origin: 132px 207px;
+	}
+	
+	.plusStarTl{
+		animation: diagonally linear 2s infinite;
+		
+	}
+	
+	.plusStarTs{
+		animation: diagonally linear 3s infinite;
+		
+	}
+	
+	.plusStarBl{
+		animation: diagonally linear 2.5s infinite;
+		
+	}
+	
+	.plusStarBs{
+		animation: diagonally linear 3.5s infinite;
+		
+	}
+	
+	.circleStarTs{
+		animation: diagonally linear 3s infinite;
+		
+	}
+	
+	.circleStarTl{
+		animation: diagonally linear 2s infinite;
+		
+	}
+	
+	.circleStarBs{
+		animation: diagonally linear 3s infinite;
+		
+	}
+	
+	.circleStarBl{
+		animation: diagonally linear 3.5s infinite;
+	}
+  }

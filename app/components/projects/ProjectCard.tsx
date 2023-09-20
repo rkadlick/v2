@@ -1,3 +1,5 @@
+'use client'
+
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,6 +9,8 @@ import { monospace, subheading } from "@/fonts";
 import styles from "./projectCard.module.css";
 import { Project } from "contentlayer/generated";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion"
+import { useInView } from 'react-intersection-observer';
 
 function createParagraphs(text: String) {
   const paragraphs = text.split('\n').map((paragraph, index) => (
@@ -15,11 +19,42 @@ function createParagraphs(text: String) {
   return paragraphs;
 }
 
-function ProjectCard(props: { key: number; project: Project }) {
+function ProjectCard(props: { key: number; id: number, project: Project }) {
 
-  console.log(props.project.image);
+  const evenVariant = {
+    hidden: { 
+      opacity: 0,
+      x: -500 },
+    visible: { 
+      opacity: 1,
+      x: 0 },
+  };
+
+  const oddVariant = {
+    hidden: { 
+      opacity: 0,
+      x: 500 },
+    visible: { 
+      opacity: 1,
+      x: 0 }, 
+  }
+
+  const even = props.id % 2 === 0 ? true : false;
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Animation triggers only once when it comes into view
+  });
+
+
   return (
-    <div className={styles.projectCard}>
+    <motion.div 
+      className={styles.projectCard}
+      initial="hidden"
+      ref={ref}
+      animate={inView ? "visible" : "hidden"}
+      variants={even ? evenVariant : oddVariant}
+      transition={{ duration: 1 }}
+    >
       <div className={styles.projectInfo}>
 	  <div className={styles.projectHeader}>
     <h4 className={subheading.className + " " + styles.projectName}>
@@ -69,7 +104,7 @@ function ProjectCard(props: { key: number; project: Project }) {
           height={360}
         />
       </div>
-    </div>
+    </motion.div>
   );
 }
 

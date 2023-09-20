@@ -1,6 +1,3 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import ProjectCard from "./ProjectCard";
 import ProjectTile from "./ProjectTile";
 import { heading, monospace } from "@/styles/fonts";
@@ -10,11 +7,8 @@ import { allProjects } from "contentlayer/generated";
 function Projects() {
   const featuredProjects = allProjects.filter((project) => project.featured);
 
-  const moreProjects = allProjects.filter((project) => !project.featured);
 
-  interface ProjectProps {
-    suggestionList: any;
-  }
+  const moreProjects = allProjects.filter((project) => !project.featured);
 
   return (
     <section id="projects">
@@ -24,14 +18,16 @@ function Projects() {
           Projects
         </h3>
         {featuredProjects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={index} id={index} project={project} />
         ))}
         <h3 className={heading.className + " " + styles.projectsSubtitle}>
           Additional Projects
         </h3>
-        <div className={styles.moreProjects}>
+        <div 
+          className={styles.moreProjects}
+        >
 		{moreProjects.map((project, index) => (
-          <ProjectTile key={index} project={project} />
+          <ProjectTile key={index} id={index} project={project} />
         ))}
         </div>
       </div>

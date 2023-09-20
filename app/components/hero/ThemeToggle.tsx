@@ -11,8 +11,6 @@ const ThemeSwitch = () => {
   const { systemTheme, theme, setTheme } = useTheme()
   const currentTheme = theme === "system" ? systemTheme : theme;
 
-  
-
 
   function toggleTheme() {
     return currentTheme === "light" ? setTheme("dark") : setTheme("light");

@@ -2,7 +2,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { text } from '@/fonts'
 import { ThemeProvider } from './ThemeProvider'
-import SplashScreen from './components/splash/SplashScreen'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,8 +18,9 @@ export default function RootLayout({
       <body>
       <ThemeProvider 
             storageKey='theme'
-            defaultTheme='system'
             enableSystem={true}
+            defaultTheme='system'
+            
       >{children}</ThemeProvider >
       </body>
     </html>

@@ -24,9 +24,12 @@
 	height: 100%;
 }
 
-/*
-.logo{
-	animation: lines linear 30s infinite;
-	stroke-dasharray: 350 100;
-}
-*/
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+	.logo{
+		animation: lines linear 30s infinite;
+		stroke-dasharray: 350 100;
+	}
+  }

@@ -40,6 +40,10 @@
 
 }
 
+.contactMessage{
+	resize: none;
+}
+
 .contactMessage:focus, .contactName:focus, .contactEmail:focus{
 	border: var(--primary-color) solid 1px;
 	outline: var(--primary-color) solid;
