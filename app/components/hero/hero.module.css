@@ -23,8 +23,11 @@
 	flex: 0 0 50%;
 }
 
+
 .greeting{
 	color: var(--primary-color);
+	display: inline-block;
+	width: 9.85001px;
 }
 
 .introName {
@@ -38,28 +41,6 @@
 .introDescription {
 	margin: 15px 0px;
 }
-
-/* .intro-links-container {
-	display: flex;
-	flex-direction: row;
-	max-width: 100%;
-	gap: 5px;
-}
-
-.intro-link {
-	display: inline-block;
-	padding: 1rem 2rem;
-	cursor: pointer;
-	background-color: var(--bg-secondary-color);
-	transition: all 0.5s ease 0s, background-position 0s ease 0.5s;
-	font-size: 1.2rem;
-	text-decoration: none;
-}
-
-.intro-icon {
-	width: 20px;
-	height: 20px;
-} */
 
 .introImage {
 	flex: 0 0 35%;
