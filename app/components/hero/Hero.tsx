@@ -29,20 +29,22 @@ function Hero() {
   const sentence = {
     hidden: {
       opacity: 0,
+      y: -20
     },
     visible: {
       opacity: 1,
+      y: 0
     },
   };
 
   const image = {
     hidden: {
       opacity: 0,
-      x: 50,
+      y: -20
     },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
     },
   };
 

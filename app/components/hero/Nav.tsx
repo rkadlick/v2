@@ -9,6 +9,7 @@ import styles from './nav.module.css'
 import ThemeToggle from './ThemeToggle'
 import useScrollDirection from '../../hooks/useScrollDirection'
 import HamburgNav from './HamburgNav'
+import { motion } from 'framer-motion'
 
 function Nav() {
 	const scrollDirection = useScrollDirection('down');
@@ -38,30 +39,63 @@ function Nav() {
 		}
 	}
 
+	const navVariant = {
+		hidden: { opacity: 0 },
+		visible: {
+		  opacity: 1
+		}
+	  };
+
+	const navTitleVariant = {
+		hidden: {
+			opacity: 0,
+			y: -10
+		},
+		visible: {
+			opacity: 1,
+			y: 0,
+		}
+	}
+
+	const navLinks = [
+		{ link: '#about', span: '01.', text: 'About' },
+		{ link: '#skills', span: '02.', text: 'Skills' },
+		{ link: '#projects', span: '03.', text: 'Projects' },
+		{ link: '#contact', span: '04.', text: 'Contact' },
+	];
+
 	return (
-		<div className={navClass()}>
+		<motion.div 
+			className={navClass()}
+			initial="hidden"
+			animate="visible"
+			variants={navVariant}
+			transition={{ duration: 1 }}
+		>
 			<div>
 				<Link href=""><Image alt="logo" src={logo} className={styles.logo} width={45} height={45} /></Link>
 			</div>
 			<div>
 				<ul className={styles.navMenu}>
-					<li className={monospace.className}>
-						<Link href="#about" className={styles.navLink}><span className={styles.navNumber}>01.</span>About</Link>
-					</li>
-					<li className={monospace.className}>
-						<Link href="#skills" className={styles.navLink}><span className={styles.navNumber}>02.</span>Skills</Link>
-					</li>
-					<li className={monospace.className}>
-						<Link href="#projects" className={styles.navLink}><span className={styles.navNumber}>03.</span>Projects</Link>
-					</li>
-					<li className={monospace.className}>
-						<Link href="#contact" className={styles.navLink}><span className={styles.navNumber}>04.</span>Contact</Link>
-					</li>
+					{navLinks.map((nav, index) => {
+						const delay = index * 0.15;
+						return (
+						<motion.li 
+							className={monospace.className}
+							key={index}
+							initial="hidden"
+							animate="visible"
+							variants={navTitleVariant}
+							transition={{ duration: 1.5, delay }}
+						>
+						<Link href={nav.link} className={styles.navLink}><span className={styles.navNumber}>{nav.span}</span>{nav.text}</Link>
+						</motion.li>
+				)})}
 					<ThemeToggle />
 				</ul>
 			</div>
 			<HamburgNav />
-		</div>
+		</motion.div>
 	);
 }
 

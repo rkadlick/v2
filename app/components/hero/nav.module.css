@@ -31,7 +31,9 @@
 	height: 70px;
 	box-shadow: 0 10px 30px -15px var(--bg-shadow);
 	position: fixed;
-	transition: all 0.5s ease-in-out;
+	transition: 
+		color 0.9s,
+		background 0.9s;
 }
 
 .scrollUp {
@@ -41,7 +43,6 @@
 
 .scrollDown {
 	animation: slideUp 1s forwards;
-	transition: 10s;
 }
 
 .logo {

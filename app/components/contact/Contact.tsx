@@ -12,7 +12,9 @@ function Contact() {
           <span className={monospace.className + " numberHeader"}>04.</span>
           Contact
         </h3>
-        <div className={styles.contactLogo}>
+        <div 
+          className={styles.contactLogo}
+        >
           <Logo />
         </div>
         <div className={styles.formContainer}>

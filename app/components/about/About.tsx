@@ -32,7 +32,8 @@ function About() {
 
 	return (
 		<section id='about'>
-			<div className={styles.aboutContainer}>
+			<div 
+				className={styles.aboutContainer}>
 				<h3 className={ heading.className + ' ' + styles.aboutTitle}><span className={ monospace.className + ' numberHeader'}>01.</span>About Me</h3>
 				<motion.div
 					className={styles.imageContainer}
