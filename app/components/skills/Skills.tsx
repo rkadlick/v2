@@ -58,6 +58,15 @@ function Skills() {
 		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faImages} />, text: 'Affinity Creative Suite' },
 	  ];
 
+	  const containerVariant = {
+		hidden: { 
+		  opacity: 0,
+		  y: 50 },
+		visible: { 
+		  opacity: 1,
+		  y: 0 },
+	  };
+
 	  const skillsVariant = {
 		hidden: {
 		  opacity: 0,
@@ -75,7 +84,14 @@ function Skills() {
 
 	return (
 		<section id="skills">
-			<div className={styles.skillsContainer}>
+			<motion.div 
+				className={styles.skillsContainer}
+				initial="hidden"
+				ref={ref}
+				animate={inView ? "visible" : "hidden"}
+				variants={containerVariant}
+				transition={{ duration: 1, delay: 0.1}}
+			>
 				<h3 className={heading.className + " " + styles.skillsTitle}>
 					<span className={monospace.className + " numberHeader"}>02.</span>
 					Skills
@@ -87,7 +103,7 @@ function Skills() {
 						</h4>
 						<ul className={styles.skillsList}>
 							{frontend.map((skill, index) => {
-								const delay = index * 0.15;
+								const delay = (index * 0.15) + 0.5;
 								return (
 								<motion.li 
 									className={monospace.className + " " + styles.skillsItem}
@@ -110,7 +126,7 @@ function Skills() {
 						</h4>
 						<ul className={styles.skillsList}>
 						{backend.map((skill, index) => {
-								const delay = index * 0.15;
+								const delay = (index * 0.15) + 0.5;
 								return (
 								<motion.li 
 									className={monospace.className + " " + styles.skillsItem}
@@ -132,7 +148,7 @@ function Skills() {
 							TOOLS
 						</h4>
 						{tools.map((skill, index) => {
-								const delay = index * 0.15;
+								const delay = (index * 0.15) + 0.5;
 								return (
 								<motion.li 
 									className={monospace.className + " " + styles.skillsItem}
@@ -149,7 +165,7 @@ function Skills() {
 							)})}
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 }
