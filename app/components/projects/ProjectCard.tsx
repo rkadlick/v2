@@ -1,5 +1,3 @@
-'use client'
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,25 +19,14 @@ function createParagraphs(text: String) {
 
 function ProjectCard(props: { key: number; id: number, project: Project }) {
 
-  const evenVariant = {
+  const cardVariant = {
     hidden: { 
       opacity: 0,
-      x: -500 },
+      y: 50 },
     visible: { 
       opacity: 1,
-      x: 0 },
+      y: 0 },
   };
-
-  const oddVariant = {
-    hidden: { 
-      opacity: 0,
-      x: 500 },
-    visible: { 
-      opacity: 1,
-      x: 0 }, 
-  }
-
-  const even = props.id % 2 === 0 ? true : false;
 
   const [ref, inView] = useInView({
     triggerOnce: true, // Animation triggers only once when it comes into view
@@ -52,8 +39,8 @@ function ProjectCard(props: { key: number; id: number, project: Project }) {
       initial="hidden"
       ref={ref}
       animate={inView ? "visible" : "hidden"}
-      variants={even ? evenVariant : oddVariant}
-      transition={{ duration: 1 }}
+      variants={cardVariant}
+      transition={{ duration: 1, delay: 0.3 }}
     >
       <div className={styles.projectInfo}>
 	  <div className={styles.projectHeader}>
