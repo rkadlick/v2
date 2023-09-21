@@ -1,3 +1,5 @@
+'use client'
+
 import {
 	faAndroid,
 	faAws,
@@ -22,6 +24,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { subheading, heading, monospace } from "@/styles/fonts";
 import styles from "./skills.module.css";
+import { motion } from "framer-motion"
+import { useInView } from 'react-intersection-observer';
 
 function Skills() {
 	const frontend = [
@@ -54,6 +58,21 @@ function Skills() {
 		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faImages} />, text: 'Affinity Creative Suite' },
 	  ];
 
+	  const skillsVariant = {
+		hidden: {
+		  opacity: 0,
+		  y: -50,
+		},
+		visible: {
+		  opacity: 1,
+		  y: 0,
+		},
+	  };
+
+	  const [ref, inView] = useInView({
+		triggerOnce: true, // Animation triggers only once when it comes into view
+	  });
+
 	return (
 		<section id="skills">
 			<div className={styles.skillsContainer}>
@@ -67,14 +86,22 @@ function Skills() {
 							FRONT-END
 						</h4>
 						<ul className={styles.skillsList}>
-							{frontend.map((skill, index) => (
-								<li 
+							{frontend.map((skill, index) => {
+								const delay = index * 0.15;
+								return (
+								<motion.li 
 									className={monospace.className + " " + styles.skillsItem}
 									key={index}
+									initial="hidden"
+									ref={ref}
+									animate={inView ? "visible" : "hidden"}
+									variants={skillsVariant}
+									transition={{ duration: 1.3, delay}}
 								>
 									{skill.icon}{skill.text}
-								</li>
-							))}
+								</motion.li>
+								
+							)})}
 						</ul>
 					</div>
 					<div className={styles.skillsCard}>
@@ -82,28 +109,44 @@ function Skills() {
 							BACK-END
 						</h4>
 						<ul className={styles.skillsList}>
-						{backend.map((skill, index) => (
-								<li 
+						{backend.map((skill, index) => {
+								const delay = index * 0.15;
+								return (
+								<motion.li 
 									className={monospace.className + " " + styles.skillsItem}
 									key={index}
+									initial="hidden"
+									ref={ref}
+									animate={inView ? "visible" : "hidden"}
+									variants={skillsVariant}
+									transition={{ duration: 1.3, delay}}
 								>
 									{skill.icon}{skill.text}
-								</li>
-							))}
+								</motion.li>
+								
+							)})}
 						</ul>
 					</div>
 					<div className={styles.skillsCard}>
 						<h4 className={subheading.className + " " + styles.skillsSubtitle}>
 							TOOLS
 						</h4>
-						{tools.map((skill, index) => (
-								<li 
+						{tools.map((skill, index) => {
+								const delay = index * 0.15;
+								return (
+								<motion.li 
 									className={monospace.className + " " + styles.skillsItem}
 									key={index}
+									initial="hidden"
+									ref={ref}
+									animate={inView ? "visible" : "hidden"}
+									variants={skillsVariant}
+									transition={{ duration: 1.3, delay}}
 								>
 									{skill.icon}{skill.text}
-								</li>
-							))}
+								</motion.li>
+								
+							)})}
 					</div>
 				</div>
 			</div>
