@@ -1,6 +1,6 @@
 .contactContainer{
 	display: flex;
-	flex-direction: row;
+	flex-direction: row-reverse;
 	flex-wrap: wrap;
 	padding-left: 5rem;
 }
@@ -36,6 +36,10 @@
 
 
 @media only screen and (max-width: 768px) {
+.contactSection{
+	margin-bottom: 1rem;
+}
+
 	.contactContainer{
 		padding: 0 5rem;
 		flex-direction: column;
@@ -56,5 +60,7 @@
 }
 
 @media only screen and (max-width: 450px) {
-
+	.contactContainer{
+		padding: 0 0;
+	}
 }

@@ -59,6 +59,8 @@
 	}
 	.aboutImage{
 		margin: 0 auto 1rem auto;
+		width: 350px;
+		height: 350px;
 	}
 	.aboutText{
 		flex: 0 0 100%;
@@ -85,5 +87,13 @@
 	.aboutText{
 		flex: 0 0 100%;
 		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.aboutImage{
+		margin: 0 auto 1rem auto;
+		width: 200px;
+		height: 200px;
 	}
 }

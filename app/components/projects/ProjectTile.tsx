@@ -12,8 +12,14 @@ import { useInView } from 'react-intersection-observer';
 function ProjectTile(props: { key: number; project: Project; id: number }) {
 
   const childVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
+    hidden: { 
+      opacity: 0,
+      y: 20
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0
+    },
   };
 
   const [ref, inView] = useInView({
