@@ -60,7 +60,7 @@
 	.aboutImage{
 		margin: 0 auto 1rem auto;
 		width: 350px;
-		height: 350px;
+		height: 402px;
 	}
 	.aboutText{
 		flex: 0 0 100%;
@@ -94,6 +94,6 @@
 	.aboutImage{
 		margin: 0 auto 1rem auto;
 		width: 200px;
-		height: 200px;
+		height: 230px;
 	}
 }
