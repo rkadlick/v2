@@ -9,8 +9,8 @@ import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
 function About() {
-	const [mounted, setMounted] = useState(false)
-    const { systemTheme, theme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+  const { systemTheme, theme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   const aboutVariant = {
@@ -29,11 +29,11 @@ function About() {
   });
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
-    return null
+    return null;
   }
 
   return (
@@ -53,7 +53,9 @@ function About() {
         <div className={styles.imageContainer}>
           <Image
             className={styles.aboutImage}
-            src={currentTheme === "light" ? '/aboutLight.png' : '/aboutDark.png'}
+            src={
+              currentTheme === "light" ? "/aboutLight.png" : "/aboutDark.png"
+            }
             alt="test"
             width={512}
             height={589}
@@ -61,17 +63,22 @@ function About() {
         </div>
         <div className={styles.aboutText}>
           <p>
-            As a lifelong musician, before tech I taught guitar and voice, ran a
-            rehearsal studio, and booked concerts in NYC and beyond.
+            I'm Ryan, a passionate software developer with a keen eye for
+            creating seamless and innovative digital experiences. My journey in
+            the tech world has led me to explore various programming languages
+            and web technologies, equipping me with the skills to tackle diverse
+            challenges. I'm currently seeking exciting opportunities to apply my
+            expertise and creativity.
           </p>
+          <br />
           <p>
-            In 2020, I took a leap and trained in modern app development at
-            Fullstack Academy. I quickly absorbed new concepts, while bringing
-            ambitious ideas and a positive attitude to every challenge.
-          </p>
-          <p>
-            When I&apos;m not coding, I&apos;m usually doing yoga, testing out a
-            new recipe, or writing a musical parody on guitar.
+            Beyond coding, I'm a gym enthusiast, avid gamer, and computer
+            builder. Whether perfecting my golf swing or tackling virtual
+            challenges, I thrive on precision, strategy, and problem-solving. My
+            commitment to growth extends to exploring machine learning for
+            innovative solutions. If you're looking for a versatile developer
+            with diverse interests and technical expertise, let's connect and
+            explore exciting projects together.
           </p>
         </div>
       </motion.div>
