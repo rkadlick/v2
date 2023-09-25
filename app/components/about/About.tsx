@@ -54,14 +54,15 @@ function About() {
           <Image
             className={styles.aboutImage}
             src={
-              currentTheme === "light" ? "/aboutLight.png" : "/aboutDark.png"
+              "/about.png"
             }
             alt="test"
             width={512}
-            height={589}
+            height={537}
           />
         </div>
-        <div className={styles.aboutText}>
+        <div className={styles.aboutTextContainer}>
+          <div className={styles.aboutText}>
           <p>
             I'm Ryan, a passionate software developer with a keen eye for
             creating seamless and innovative digital experiences. My journey in
@@ -80,6 +81,7 @@ function About() {
             with diverse interests and technical expertise, let's connect and
             explore exciting projects together.
           </p>
+          </div>
         </div>
       </motion.div>
     </section>

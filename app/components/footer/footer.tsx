@@ -36,7 +36,7 @@ function Footer() {
 			variants={containerVariant}
 			transition={{ duration: 1, delay: 0.1}}
 		>
-			<Link href='' className={styles.footerLink + " " + monospace.className}>Designed & Built by <span className={styles.name}>Ryan Kadlick</span>.</Link>
+			<Link href="https://github.com/rkadlick" className={styles.footerLink + " " + monospace.className}>Designed & Built by <span className={styles.name}>Ryan Kadlick</span>.</Link>
 			<ul className={styles.iconList}>
 				<li>
 					<Link href="https://github.com/rkadlick" target='_blank'><FontAwesomeIcon className={styles.iconListIcon} icon={faGithub} /></Link>
