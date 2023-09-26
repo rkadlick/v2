@@ -27,8 +27,13 @@
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
-	animation-name: ckw;
-	animation-duration: 1s;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.themeButton > svg {
+		animation-name: ckw;
+		animation-duration: 1s;
+	}
 }
 
 

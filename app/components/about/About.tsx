@@ -3,17 +3,37 @@
 import { heading, monospace } from "@/styles/fonts";
 import Image from "next/image";
 import styles from "./about.module.css";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
 function About() {
   const [mounted, setMounted] = useState(false);
-  const { systemTheme, theme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
 
-  const aboutVariant = {
+
+  const aboutText1 =
+    "I am Ryan, a dedicated software developer focused on creating exceptional digital experiences. With a solid background in various programming languages and web technologies, I am actively seeking new opportunities to leverage my skills and creativity.";
+
+  const aboutText2 =
+    "Beyond my professional pursuits, I regularly attend the gym, am an avid golfer, and have dabbled in building personal computers. If you're looking for a versatile developer with diverse interests and technical expertise, let's connect and explore exciting projects together.";
+
+    const shouldReduceMotion = useReducedMotion();
+
+
+  const reduceMotionVariant = {
+    hidden: {
+      opacity: 1,
+      x:0,
+      y:0
+    },
+    visible: {
+      opacity: 1,
+      x:0,
+      y:0
+    }
+  }
+  
+    const aboutVariant = {
     hidden: {
       opacity: 0,
       y: 50,
@@ -43,7 +63,7 @@ function About() {
         initial="hidden"
         ref={ref}
         animate={inView ? "visible" : "hidden"}
-        variants={aboutVariant}
+        variants={shouldReduceMotion ? reduceMotionVariant : aboutVariant}
         transition={{ duration: 1.5, delay: 0.1 }}
       >
         <h3 className={heading.className + " " + styles.aboutTitle}>
@@ -53,9 +73,7 @@ function About() {
         <div className={styles.imageContainer}>
           <Image
             className={styles.aboutImage}
-            src={
-              "/about.png"
-            }
+            src={"/about.png"}
             alt="test"
             width={512}
             height={537}
@@ -63,24 +81,13 @@ function About() {
         </div>
         <div className={styles.aboutTextContainer}>
           <div className={styles.aboutText}>
-          <p>
-            I'm Ryan, a passionate software developer with a keen eye for
-            creating seamless and innovative digital experiences. My journey in
-            the tech world has led me to explore various programming languages
-            and web technologies, equipping me with the skills to tackle diverse
-            challenges. I'm currently seeking exciting opportunities to apply my
-            expertise and creativity.
-          </p>
-          <br />
-          <p>
-            Beyond coding, I'm a gym enthusiast, avid gamer, and computer
-            builder. Whether perfecting my golf swing or tackling virtual
-            challenges, I thrive on precision, strategy, and problem-solving. My
-            commitment to growth extends to exploring machine learning for
-            innovative solutions. If you're looking for a versatile developer
-            with diverse interests and technical expertise, let's connect and
-            explore exciting projects together.
-          </p>
+            <p>
+              {aboutText1}
+            </p>
+            <br />
+            <p>
+              {aboutText2}
+            </p>
           </div>
         </div>
       </motion.div>

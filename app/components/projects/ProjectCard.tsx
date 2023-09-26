@@ -7,7 +7,7 @@ import { monospace, subheading } from "@/fonts";
 import styles from "./projectCard.module.css";
 import { Project } from "contentlayer/generated";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 
 function createParagraphs(text: String) {
@@ -18,6 +18,22 @@ function createParagraphs(text: String) {
 }
 
 function ProjectCard(props: { key: number; id: number, project: Project }) {
+
+  const shouldReduceMotion = useReducedMotion();
+
+
+  const reduceMotionVariant = {
+    hidden: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    }
+  }
 
   const cardVariant = {
     hidden: { 
@@ -39,7 +55,7 @@ function ProjectCard(props: { key: number; id: number, project: Project }) {
       initial="hidden"
       ref={ref}
       animate={inView ? "visible" : "hidden"}
-      variants={cardVariant}
+      variants={shouldReduceMotion ? reduceMotionVariant : cardVariant}
       transition={{ duration: 1, delay: 0.3 }}
     >
       <div className={styles.projectInfo}>

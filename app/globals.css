@@ -130,20 +130,52 @@ input, textarea {
 }
 
 
+@media (prefers-reduced-motion: no-preference) {
+.sidebar-enter{
+  transform: translateX(200%);
+}
 .sidebar-enter-active {
-  transform: translateX(150%);
-  transition: ease-in;
+  transform: translateX(200%);
 }
 .sidebar-enter-done{
   transform: translateX(0%);
+  transition: transform 300ms ease-in-out;
 }
-.sidebar-exit {
+.sidebar-exit{
   transform: translateX(0%);
 }
-.sidebar-exit-active {
+.sidebar-exit-active{
   transform: translateX(200%);
-  transition: transform 400ms ease-in-out;
+  transition: transform 300ms ease-in-out;
 }
+.sidebar-exit-done {
+  transform: translateX(200%);
+}
+}
+
+@media (prefers-reduced-motion) {
+  .sidebar-enter{
+    opacity: 0;
+  }
+  .sidebar-enter-active {
+    opacity: 0;
+  }
+  .sidebar-enter-done{
+    opacity: 1;
+    transition: opacity 300ms ease-in-out;
+  }
+  .sidebar-exit{
+    opacity: 1;
+  }
+  .sidebar-exit-active{
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+  .sidebar-exit-done {
+    opacity: 0;
+  }
+  }
+
 
 
 .hamburgIcon-enter-done > :first-child {
@@ -160,7 +192,6 @@ input, textarea {
 .hamburgIcon-enter-done > :nth-child(3) {
   transform: rotate(-45deg) translate(-5px, 2px);
 }
-
 
 
 @media only screen and (max-width: 600px) {

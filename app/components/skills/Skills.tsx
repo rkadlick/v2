@@ -24,7 +24,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { subheading, heading, monospace } from "@/styles/fonts";
 import styles from "./skills.module.css";
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 
 function Skills() {
@@ -58,6 +58,22 @@ function Skills() {
 		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faImages} />, text: 'Affinity Creative Suite' },
 	  ];
 
+	  const shouldReduceMotion = useReducedMotion();
+
+
+	  const reduceMotionVariant = {
+		hidden: {
+		  opacity: 1,
+		  y: 0,
+		  x: 0
+		},
+		visible: {
+		  opacity: 1,
+		  y: 0,
+		  x: 0
+		}
+	  }
+
 	  const containerVariant = {
 		hidden: { 
 		  opacity: 0,
@@ -89,7 +105,7 @@ function Skills() {
 				initial="hidden"
 				ref={ref}
 				animate={inView ? "visible" : "hidden"}
-				variants={containerVariant}
+				variants={shouldReduceMotion ? reduceMotionVariant : containerVariant}
 				transition={{ duration: 1, delay: 0.1}}
 			>
 				<h3 className={heading.className + " " + styles.skillsTitle}>
@@ -111,7 +127,7 @@ function Skills() {
 									initial="hidden"
 									ref={ref}
 									animate={inView ? "visible" : "hidden"}
-									variants={skillsVariant}
+									variants={shouldReduceMotion ? reduceMotionVariant : skillsVariant}
 									transition={{ duration: 1.3, delay}}
 								>
 									{skill.icon}{skill.text}
@@ -134,7 +150,7 @@ function Skills() {
 									initial="hidden"
 									ref={ref}
 									animate={inView ? "visible" : "hidden"}
-									variants={skillsVariant}
+									variants={shouldReduceMotion ? reduceMotionVariant : skillsVariant}
 									transition={{ duration: 1.3, delay}}
 								>
 									{skill.icon}{skill.text}
@@ -156,7 +172,7 @@ function Skills() {
 									initial="hidden"
 									ref={ref}
 									animate={inView ? "visible" : "hidden"}
-									variants={skillsVariant}
+									variants={shouldReduceMotion ? reduceMotionVariant : skillsVariant}
 									transition={{ duration: 1.3, delay}}
 								>
 									{skill.icon}{skill.text}

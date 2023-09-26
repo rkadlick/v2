@@ -7,7 +7,7 @@ import Image from "next/image";
 import { heading, monospace, subheading } from "@/styles/fonts";
 import styles from "./hero.module.css";
 import useScrollDirection from "../../hooks/useScrollDirection";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 function Hero() {
   const greeting = "Hey, my name is";
@@ -15,6 +15,22 @@ function Hero() {
   const title = "I create unique designs and applications.";
   const description =
     "I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm persuing a new adventure.";
+
+  const shouldReduceMotion = useReducedMotion();
+
+
+  const reduceMotionVariant = {
+    hidden: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    }
+  }
 
   const greetVariant = {
     hidden: {
@@ -24,8 +40,8 @@ function Hero() {
     visible: {
       opacity: 1,
       x: 0,
-    },
-  };
+    }};
+
   const sentence = {
     hidden: {
       opacity: 0,
@@ -62,7 +78,7 @@ function Hero() {
                   className={monospace.className + " " + styles.greeting}
                   initial="hidden"
                   animate="visible"
-                  variants={greetVariant}
+                  variants={shouldReduceMotion ? reduceMotionVariant : greetVariant}
                   transition={{ duration: 1, delay }}
                 >
                   {char}
@@ -73,7 +89,7 @@ function Hero() {
               className={heading.className + " " + styles.introName}
               initial="hidden"
               animate="visible"
-              variants={sentence}
+              variants={shouldReduceMotion ? reduceMotionVariant : sentence}
               transition={{ duration: 2, delay: 0.9 }}
             >
               {name}
@@ -82,7 +98,7 @@ function Hero() {
               className={subheading.className + " " + styles.introTitle}
               initial="hidden"
               animate="visible"
-              variants={sentence}
+              variants={shouldReduceMotion ? reduceMotionVariant : sentence}
               transition={{ duration: 2, delay: 1.1 }}
             >
               {title}
@@ -91,7 +107,7 @@ function Hero() {
               className={styles.introDescription}
               initial="hidden"
               animate="visible"
-              variants={sentence}
+              variants={shouldReduceMotion ? reduceMotionVariant : sentence}
               transition={{ duration: 2, delay: 1.3 }}
             >
               {description}
@@ -101,7 +117,7 @@ function Hero() {
             className={styles.introImage}
             initial="hidden"
             animate="visible"
-            variants={image}
+            variants={shouldReduceMotion ? reduceMotionVariant : image}
             transition={{ duration: 2, delay: 1 }}
           >
             <Rocket />

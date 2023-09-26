@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styles from "./iconList.module.css";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { icon } from "@fortawesome/fontawesome-svg-core";
 
 function IconList() {
@@ -22,9 +22,12 @@ function IconList() {
     { link: "./resume.pdf", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faFile} /> }
   ]
 
-  const containerVariant = {
+  const shouldReduceMotion = useReducedMotion();
+
+
+  const reduceMotionVariant = {
     hidden: {
-      opacity: 0
+      opacity: 1
     },
     visible: {
       opacity: 1
@@ -48,7 +51,7 @@ function IconList() {
 	  	className={styles.iconList}
 		  initial="hidden"
 		  animate="visible"
-		  variants={iconsVariant}
+		  variants={shouldReduceMotion ? reduceMotionVariant : iconsVariant}
 		  transition={{ duration: 1, delay: 0.5}}
 	  >
     {iconArray.map((iconLink, index) => {
@@ -58,7 +61,7 @@ function IconList() {
 							key={index}
 							initial="hidden"
 							animate="visible"
-							variants={iconsVariant}
+							variants={shouldReduceMotion ? reduceMotionVariant : iconsVariant}
 							transition={{ duration: 1, delay }}
 						>
 						<Link href={iconLink.link} className={styles.navLink}>{iconLink.icon}</Link>

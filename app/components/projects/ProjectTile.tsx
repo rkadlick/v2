@@ -6,10 +6,26 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import styles from "./projectTile.module.css";
 import { Project } from "contentlayer/generated";
 import { faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 
 function ProjectTile(props: { key: number; project: Project; id: number }) {
+
+  const shouldReduceMotion = useReducedMotion();
+
+
+  const reduceMotionVariant = {
+    hidden: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    }
+  }
 
   const childVariants = {
     hidden: { 
@@ -32,7 +48,7 @@ function ProjectTile(props: { key: number; project: Project; id: number }) {
       initial="hidden"
       ref={ref}
       animate={inView ? "visible" : "hidden"}
-      variants={childVariants}
+      variants={shouldReduceMotion ? reduceMotionVariant : childVariants}
       transition={{ duration: 1, delay }}
       className={styles.projectTile}
 

@@ -5,7 +5,7 @@ import ProjectTile from "./ProjectTile";
 import { heading, monospace } from "@/styles/fonts";
 import styles from "./projects.module.css";
 import { allProjects } from "contentlayer/generated";
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 
 function Projects() {
@@ -13,6 +13,22 @@ function Projects() {
 
 
   const moreProjects = allProjects.filter((project) => !project.featured);
+
+  const shouldReduceMotion = useReducedMotion();
+
+
+  const reduceMotionVariant = {
+    hidden: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    }
+  }
 
   const containerVariant = {
 		hidden: { 
@@ -34,7 +50,7 @@ function Projects() {
         initial="hidden"
         ref={ref}
         animate={inView ? "visible" : "hidden"}
-        variants={containerVariant}
+        variants={shouldReduceMotion ? reduceMotionVariant : containerVariant}
         transition={{ duration: 1, delay: 0.1}}
       >
         <h3 className={heading.className + " " + styles.projectsTitle}>

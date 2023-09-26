@@ -97,7 +97,7 @@
 		opacity: 0;
 	}
 
-/*
+
 @media (prefers-reduced-motion: no-preference) {
 	.rocketLineT{
 		animation: lines linear 3s infinite;
@@ -172,4 +172,4 @@
 		animation: diagonally linear 3.5s infinite;
 	}
   }
-  */
+  

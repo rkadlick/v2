@@ -5,10 +5,26 @@ import { heading, text, monospace } from "@/styles/fonts";
 import styles from "./contact.module.css";
 import Logo from "./Logo";
 import ContactForm from "./ContactForm";
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 
 function Contact() {
+
+  const shouldReduceMotion = useReducedMotion();
+
+
+  const reduceMotionVariant = {
+    hidden: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0
+    }
+  }
 
   const containerVariant = {
 		hidden: { 
@@ -33,7 +49,7 @@ function Contact() {
         initial="hidden"
         ref={ref}
         animate={inView ? "visible" : "hidden"}
-        variants={containerVariant}
+        variants={shouldReduceMotion ? reduceMotionVariant : containerVariant}
         transition={{ duration: 1, delay: 0.3}}
       >
         <h3 className={heading.className + " " + styles.contactTitle}>

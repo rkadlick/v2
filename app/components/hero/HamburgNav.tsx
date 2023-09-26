@@ -18,7 +18,7 @@ function HamburgNav() {
 			<input type='checkbox' onChange={showSidebar} />
 			<CSSTransition
 				in={sidebar}
-				timeout={300}
+				timeout={100}
 				classNames='hamburgIcon'
 			>
 				<div className={styles.hamburgIcon}>
@@ -29,9 +29,13 @@ function HamburgNav() {
 			</CSSTransition>
 			<CSSTransition
 				in={sidebar}
-				timeout={300}
+				timeout={{
+					enter: 100,
+					exit: 300,
+				   }}
 				classNames='sidebar'
 				unmountOnExit
+				
 			>
 				<ul className={styles.hamburgList}>
 					<ThemeToggle />

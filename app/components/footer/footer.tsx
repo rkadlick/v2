@@ -7,10 +7,26 @@ import { faGithub, faCodepen, faLinkedin } from '@fortawesome/free-brands-svg-ic
 import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 
 function Footer() {
+
+	const shouldReduceMotion = useReducedMotion();
+
+
+	const reduceMotionVariant = {
+	  hidden: {
+		opacity: 1,
+		x: 0,
+		y: 0
+	  },
+	  visible: {
+		opacity: 1,
+		x: 0,
+		y: 0
+	  }
+	}
 
 	const containerVariant = {
 		hidden: { 
@@ -33,7 +49,7 @@ function Footer() {
 			initial="hidden"
 			ref={ref}
 			animate={inView ? "visible" : "hidden"}
-			variants={containerVariant}
+			variants={shouldReduceMotion ? reduceMotionVariant : containerVariant}
 			transition={{ duration: 1, delay: 0.1}}
 		>
 			<Link href="https://github.com/rkadlick" className={styles.footerLink + " " + monospace.className}>Designed & Built by <span className={styles.name}>Ryan Kadlick</span>.</Link>

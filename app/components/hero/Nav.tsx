@@ -9,7 +9,7 @@ import styles from './nav.module.css'
 import ThemeToggle from './ThemeToggle'
 import useScrollDirection from '../../hooks/useScrollDirection'
 import HamburgNav from './HamburgNav'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 function Nav() {
 	const scrollDirection = useScrollDirection('down');
@@ -37,6 +37,22 @@ function Nav() {
 		} else {
 			return styles.navbar;
 		}
+	}
+
+	const shouldReduceMotion = useReducedMotion();
+
+
+	const reduceMotionVariant = {
+	  hidden: {
+		opacity: 1,
+		x: 0,
+		y: 0
+	  },
+	  visible: {
+		opacity: 1,
+		x: 0,
+		y: 0
+	  }
 	}
 
 	const navVariant = {
@@ -69,7 +85,7 @@ function Nav() {
 			className={navClass()}
 			initial="hidden"
 			animate="visible"
-			variants={navVariant}
+			variants={shouldReduceMotion ? reduceMotionVariant : navVariant}
 			transition={{ duration: 1 }}
 		>
 			<div>
@@ -85,7 +101,7 @@ function Nav() {
 							key={index}
 							initial="hidden"
 							animate="visible"
-							variants={navTitleVariant}
+							variants={shouldReduceMotion ? reduceMotionVariant : navTitleVariant}
 							transition={{ duration: 1.5, delay }}
 						>
 						<Link href={nav.link} className={styles.navLink}><span className={styles.navNumber}>{nav.span}</span>{nav.text}</Link>
