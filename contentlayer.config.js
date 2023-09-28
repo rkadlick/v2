@@ -48,27 +48,9 @@ export const Project = defineDocumentType(() => ({
   computedFields,
 }))
 
-export const Skills = defineDocumentType(() => ({
-  name: "Skills",
-  filePathPattern: `skills/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    skills: {
-      type: "list",
-      of: {type: string},
-      required: true,
-    },
-  },
-  computedFields,
-}))
-
 export default makeSource({
   contentDirPath: "./app/content",
-  documentTypes: [Project, Skill],
+  documentTypes: [Project],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

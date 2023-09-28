@@ -15,7 +15,7 @@ function About() {
     "I am Ryan, a dedicated software developer focused on creating exceptional digital experiences. With a solid background in various programming languages and web technologies, I am actively seeking new opportunities to leverage my skills and creativity.";
 
   const aboutText2 =
-    "Beyond my professional pursuits, I regularly attend the gym, am an avid golfer, and have dabbled in building personal computers. If you're looking for a versatile developer with diverse interests and technical expertise, let's connect and explore exciting projects together.";
+    "Beyond my professional pursuits, I regularly attend the gym, am an avid golfer, and have built multiple computers. If you're looking for a versatile developer with diverse interests and technical expertise, let's connect and explore exciting projects together.";
 
     const shouldReduceMotion = useReducedMotion();
 
