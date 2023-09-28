@@ -8,7 +8,7 @@ const CONTACT_MESSAGE_FIELDS = {
   message: "Message",
 };
 
-const generateEmailContent = (dataObj) => {
+const generateEmailContent = (dataObj : any) => {
   const data = dataObj.data;
   const stringData = Object.entries(data).reduce(
     (str, [key, val]) =>
