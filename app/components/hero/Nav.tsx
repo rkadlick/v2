@@ -12,7 +12,7 @@ import HamburgNav from './HamburgNav'
 import { motion, useReducedMotion } from 'framer-motion'
 
 function Nav() {
-	const scrollDirection = useScrollDirection('down');
+	const scrollDirection = useScrollDirection();
 	const [scrolledToTop, setScrolledToTop] = useState(true);
 
 	const handleScroll = () => {
