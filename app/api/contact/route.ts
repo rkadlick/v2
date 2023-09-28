@@ -2,7 +2,7 @@ import { signUpSchema } from "@/lib/formSchema";
 import { NextResponse } from "next/server";
 import { mailOptions, transporter } from "../../config/nodemailer";
 
-const CONTACT_MESSAGE_FIELDS = {
+const CONTACT_MESSAGE_FIELDS : { [key: string]: any } = {
   name: "Name",
   email: "Email",
   message: "Message",
