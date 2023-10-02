@@ -10,7 +10,7 @@ import useScrollDirection from "../../hooks/useScrollDirection";
 import { motion, useReducedMotion } from "framer-motion";
 
 function Hero() {
-  const greeting = "Hey, my name is";
+  const greeting = "Hi, my name is";
   const name = "Ryan Kadlick.";
   const title = "I create unique designs and applications.";
   const description =

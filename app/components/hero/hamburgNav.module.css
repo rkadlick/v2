@@ -1,5 +1,6 @@
 .hamburgMenu {
 	height: 100%;
+
 }
 
 .hamburgMenu > input {
@@ -63,6 +64,9 @@
 	width: 100%;
 	flex-direction: column;
 	list-style-type: none;
+	transition: 
+		color 0.9s,
+		background 0.9s;
 }
 
 .hamburgList > div {

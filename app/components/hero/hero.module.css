@@ -1,5 +1,4 @@
 .hero {
-	height: 100vh;
 	margin-bottom: 2rem;
 	position: relative;
 	overflow: hidden;
@@ -55,7 +54,7 @@
 		padding-left: 4rem;
 	}
 	.introImage{
-		flex: 0 0 55%;
+		flex: 0 0 45%;
 	}
 }
 
@@ -67,7 +66,7 @@
 		padding-left: 4rem;
 	}
 	.introImage{
-		flex: 0 0 55%;
+		flex: 0 0 45%;
 	}
 }
 
