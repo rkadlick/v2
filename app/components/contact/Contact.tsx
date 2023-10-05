@@ -59,7 +59,7 @@ function Contact() {
         <div className={styles.formContainer}>
           <p className={styles.contactText}>
           Got a question or proposal, or just want
-          to say hello? Please reach out.
+          to say hello?
           </p>
           <ContactForm />
         </div>

@@ -7,7 +7,7 @@
 	align-items: baseline;
 }
 
-.projectsTitle::after, .projectsSubtitle::after{
+.projectsTitle::after{
 	content: '';
 	display:block;
 	border-bottom: 1px solid var(--text-secondary-color);

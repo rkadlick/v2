@@ -11,6 +11,13 @@ import { useInView } from 'react-intersection-observer';
 
 function ProjectTile(props: { key: number; project: Project; id: number }) {
 
+  function createParagraphs(text: String) {
+    const paragraphs = text.split('\n').map((paragraph, index) => (
+      <p key={index} className={styles.projectText}>{paragraph}</p>
+    ));
+    return paragraphs;
+  }
+
   const shouldReduceMotion = useReducedMotion();
 
 
@@ -76,7 +83,7 @@ function ProjectTile(props: { key: number; project: Project; id: number }) {
       )}
 	</div>
       <h4 className={subheading.className + " " + styles.projectName}>{props.project.title}</h4>
-      <p className={styles.projectDescription}>{props.project.body.raw}</p>
+      {createParagraphs(props.project.body.raw)}
       <div className={styles.projectTech}>
         {props.project.tech?.map((tech, index) => (
           <div key={index} className={monospace.className + " " + styles.tech}>
