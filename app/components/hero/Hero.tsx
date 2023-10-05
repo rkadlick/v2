@@ -14,7 +14,7 @@ function Hero() {
   const name = "Ryan Kadlick.";
   const title = "I create unique designs and applications.";
   const description =
-    "I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm persuing a new adventure.";
+    "I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm pursuing a new adventure.";
 
   const shouldReduceMotion = useReducedMotion();
 
