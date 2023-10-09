@@ -89,7 +89,7 @@ function Nav() {
 			transition={{ duration: 1 }}
 		>
 			<div>
-				<Link href=""><Image alt="logo" src={logo} className={styles.logo} width={45} height={45} /></Link>
+				<Link href="#intro"><Image alt="logo" src={logo} className={styles.logo} width={45} height={45} /></Link>
 			</div>
 			<div>
 				<ul className={styles.navMenu}>

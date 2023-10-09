@@ -16,10 +16,10 @@ import { icon } from "@fortawesome/fontawesome-svg-core";
 function IconList() {
 
   const iconArray = [
-    { link: "https://github.com/rkadlick", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faGithub} /> },
-    { link: "https://codepen.io/rykadlick", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faCodepen} />},
-    { link: "https://www.linkedin.com/in/ryankadlick/", icon: <FontAwesomeIcon className={styles.iconListIcon}icon={faLinkedin}/>},
-    { link: "./resume.pdf", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faFile} /> }
+    { link: "https://github.com/rkadlick", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faGithub} />, aria: "Github" },
+    { link: "https://codepen.io/rykadlick", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faCodepen} />, aria:"Codepen" },
+    { link: "https://www.linkedin.com/in/ryankadlick/", icon: <FontAwesomeIcon className={styles.iconListIcon}icon={faLinkedin}/>, aria:"LinkedIn" },
+    { link: "./resume.pdf", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faFile} />, aria:"Resume" }
   ]
 
   const shouldReduceMotion = useReducedMotion();
@@ -64,7 +64,7 @@ function IconList() {
 							variants={shouldReduceMotion ? reduceMotionVariant : iconsVariant}
 							transition={{ duration: 1, delay }}
 						>
-						<Link href={iconLink.link} className={styles.navLink}>{iconLink.icon}</Link>
+						<Link href={iconLink.link} className={styles.navLink} aria-label={iconLink.aria}>{iconLink.icon}</Link>
 						</motion.li>
 				)})}
       </motion.ul>

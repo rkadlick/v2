@@ -25,7 +25,7 @@ const ThemeSwitch = () => {
 
   return (
   <div className={styles.themeToggle}>
-    <button className={styles.themeButton} onClick={toggleTheme}>
+    <button className={styles.themeButton} onClick={toggleTheme} aria-label='Light/Dark Mode'>
       {currentTheme === "light" ? <SunIcon /> : <MoonIcon />}
     </button>
     

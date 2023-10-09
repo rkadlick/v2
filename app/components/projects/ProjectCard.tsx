@@ -68,6 +68,7 @@ function ProjectCard(props: { key: number; id: number, project: Project }) {
           href={props.project.linkSource}
           className={styles.projectLink}
           target="_blank"
+          aria-label="Source Link"
         >
           <FontAwesomeIcon className={styles.projectIcon} icon={faGithub} />
         </Link>
@@ -78,6 +79,7 @@ function ProjectCard(props: { key: number; id: number, project: Project }) {
           href={props.project.linkLive}
           className={styles.projectLink}
           target="_blank"
+          aria-label="Live Link"
         >
           <FontAwesomeIcon className={styles.projectIcon} icon={faUpRightFromSquare} />
         </Link>

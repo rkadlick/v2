@@ -163,6 +163,7 @@ function Skills() {
 						<h4 className={subheading.className + " " + styles.skillsSubtitle}>
 							TOOLS
 						</h4>
+						<ul className={styles.skillsList}>
 						{tools.map((skill, index) => {
 								const delay = (index * 0.15) + 0.5;
 								return (
@@ -179,6 +180,7 @@ function Skills() {
 								</motion.li>
 								
 							)})}
+							</ul>
 					</div>
 				</div>
 			</motion.div>
