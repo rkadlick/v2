@@ -6,6 +6,7 @@ import styles from "./about.module.css";
 import { motion, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 function About() {
   const [mounted, setMounted] = useState(false);
@@ -78,6 +79,7 @@ function About() {
             width={512}
             height={537}
           />
+          <p className={monospace.className + " " + styles.imageCaption}>* Created with custom models, using <span className={styles.captionTech}>Stable Diffusion AI</span></p>
         </div>
         <div className={styles.aboutTextContainer}>
           <div className={styles.aboutText}>

@@ -25,6 +25,18 @@
   .imageContainer{
 	display: flex;
 	flex: 0 0 50%;
+	flex-direction: column;
+  }
+
+  .imageCaption{
+	font-size: var(--fz-xxs);
+	margin: auto;
+	margin-top: 5px;
+	color: var(--text-primary-color);
+  }
+
+  .captionTech{
+	text-decoration: none;
   }
 
 .aboutTextContainer{
@@ -54,7 +66,7 @@
 		flex-direction: column;
 	}
 	.aboutImage{
-		margin: 0 auto 1rem auto;
+		margin: 0 auto;
 	}
 	.aboutTextContainer{
 		flex: 0 0 100%;
@@ -62,6 +74,9 @@
 	.aboutText{
 		width: 100%;
 		margin-top: 1rem;
+	}
+	.imageCaption{
+
 	}
 }
 
@@ -71,7 +86,6 @@
 		padding-left: 5rem;
 	}
 	.aboutImage{
-		margin: 0 auto 1rem auto;
 		width: 350px;
 		height: 367px;
 	}
@@ -94,9 +108,6 @@
 		position: relative;
 		margin-left: 10px;
 	  }
-	.aboutImage{
-		margin: 0 auto 1rem auto;
-	}
 	.aboutTextContainer{
 		flex: 0 0 100%;
 		width: 100%;
@@ -105,7 +116,6 @@
 
 @media only screen and (max-width: 400px) {
 	.aboutImage{
-		margin: 0 auto 1rem auto;
 		width: 200px;
 		height: 210px;
 	}

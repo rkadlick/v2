@@ -19,6 +19,7 @@ import {
 	faCode,
 	faDatabase,
 	faImages,
+	faImage
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -51,11 +52,11 @@ function Skills() {
 	const tools = [
 		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faGit} />, text: 'Git' },
 		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faCode} />, text: 'VSCode' },
+		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faImage} />, text: 'Stable Diffusion AI' },
 		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faWordpress} />, text: 'Wordpress' },
 		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faAws} />, text: 'AWS' },
 		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faAndroid} />, text: 'Android Studio' },
-		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faImages} />, text: 'Adobe Creative Suite' },
-		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faImages} />, text: 'Affinity Creative Suite' },
+		{ icon: <FontAwesomeIcon className={styles.skillsIcon} icon={faImages} />, text: 'Adobe/Affinity Creative Suite' },
 	  ];
 
 	  const shouldReduceMotion = useReducedMotion();
