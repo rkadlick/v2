@@ -1,5 +1,4 @@
 import * as React from "react"
-import { ThemeProvider } from 'next-themes'
 import Hero from "./components/hero/Hero"
 import Skills from "./components/skills/Skills"
 import Projects from "./components/projects/Projects"

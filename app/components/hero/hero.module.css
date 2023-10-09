@@ -74,6 +74,9 @@
 	.hero{
 		height: 100%;
 	}
+	.introSection{
+		margin-bottom: 0;
+	}
 	.introContainer{
 		margin-top: 3rem;
 		flex-direction: column;
