@@ -7,7 +7,7 @@ import styles from "./contactForm.module.css";
 import { heading, text } from "@/styles/fonts";
 import { TSignUpSchema, signUpSchema } from "@/lib/formSchema";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function ContactForm() {
   const {

@@ -3,10 +3,8 @@
 import React from "react";
 import Nav from "./Nav";
 import Rocket from "./Rocket";
-import Image from "next/image";
 import { heading, monospace, subheading } from "@/styles/fonts";
 import styles from "./hero.module.css";
-import useScrollDirection from "../../hooks/useScrollDirection";
 import { motion, useReducedMotion } from "framer-motion";
 
 function Hero() {

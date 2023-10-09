@@ -5,13 +5,12 @@ import {
   faGithub,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { faCode, faFile, faLink } from "@fortawesome/free-solid-svg-icons";
+import { faFile } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styles from "./iconList.module.css";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { icon } from "@fortawesome/fontawesome-svg-core";
 
 function IconList() {
 

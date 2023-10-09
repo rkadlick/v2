@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react";
-import { heading, text, monospace } from "@/styles/fonts";
+import { heading, monospace } from "@/styles/fonts";
 import styles from "./contact.module.css";
 import Logo from "./Logo";
 import ContactForm from "./ContactForm";
