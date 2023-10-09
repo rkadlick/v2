@@ -107,6 +107,7 @@ function ProjectCard(props: { key: number; id: number, project: Project }) {
           alt="test"
           width={640}
           height={360}
+          sizes="(max-width: 600px) 25vw, (max-width: 768px) 50vw, (max-width: 992px) 75vw, (max-width: 1200px) 100vw"
         />
       </div>
     </motion.div>
