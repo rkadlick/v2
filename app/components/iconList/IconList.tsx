@@ -19,7 +19,7 @@ function IconList() {
     { link: "https://github.com/rkadlick", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faGithub} />, aria: "Github" },
     { link: "https://codepen.io/rykadlick", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faCodepen} />, aria:"Codepen" },
     { link: "https://www.linkedin.com/in/ryankadlick/", icon: <FontAwesomeIcon className={styles.iconListIcon}icon={faLinkedin}/>, aria:"LinkedIn" },
-    { link: "./resume.pdf", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faFile} />, aria:"Resume" }
+    { link: "/resume.pdf", icon: <FontAwesomeIcon className={styles.iconListIcon} icon={faFile} />, aria:"Resume" }
   ]
 
   const shouldReduceMotion = useReducedMotion();

@@ -66,6 +66,7 @@ function ProjectTile(props: { key: number; project: Project; id: number }) {
           href={props.project.linkSource}
           className={styles.projectLink}
           target="_blank"
+          aria-label="Source Link"
         >
           <FontAwesomeIcon className={styles.projectIcon} icon={faGithub} />
         </Link>
@@ -76,6 +77,7 @@ function ProjectTile(props: { key: number; project: Project; id: number }) {
           href={props.project.linkLive}
           className={styles.projectLink}
           target="_blank"
+          aria-label="Live link"
         >
           <FontAwesomeIcon className={styles.projectIcon} icon={faUpRightFromSquare} />
         </Link>

@@ -15,7 +15,7 @@ function HamburgNav() {
 
 	return (
 		<div className={styles.hamburgMenu}>
-			<input type='checkbox' onChange={showSidebar} />
+			<input type='checkbox' onChange={showSidebar} aria-label='Open/Close Side Menu' />
 			<CSSTransition
 				in={sidebar}
 				timeout={100}
