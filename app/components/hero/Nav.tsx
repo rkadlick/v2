@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import logo from '../../images/tester.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { monospace } from '@/fonts'
@@ -89,7 +88,7 @@ function Nav() {
 			transition={{ duration: 1 }}
 		>
 			<div>
-				<Link href="#intro"><Image alt="logo" src={logo} className={styles.logo} width={45} height={45} /></Link>
+				<Link href="#intro"><Image alt="logo" src='/logo.png' className={styles.logo} width={45} height={45} /></Link>
 			</div>
 			<div>
 				<ul className={styles.navMenu}>
