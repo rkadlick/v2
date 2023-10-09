@@ -55,16 +55,16 @@ function Footer() {
 			<Link href="https://github.com/rkadlick" className={styles.footerLink + " " + monospace.className}>Designed & Built by <span className={styles.name}>Ryan Kadlick</span>.</Link>
 			<ul className={styles.iconList}>
 				<li>
-					<Link href="https://github.com/rkadlick" target='_blank'><FontAwesomeIcon className={styles.iconListIcon} icon={faGithub} /></Link>
+					<Link href="https://github.com/rkadlick" target='_blank' aria-label='Github'><FontAwesomeIcon className={styles.iconListIcon} icon={faGithub} /></Link>
 				</li>
 				<li>
-					<Link href="https://codepen.io/rykadlick" target='_blank'><FontAwesomeIcon className={styles.iconListIcon} icon={faCodepen} /></Link>
+					<Link href="https://codepen.io/rykadlick" target='_blank' aria-label='CodePen'><FontAwesomeIcon className={styles.iconListIcon} icon={faCodepen} /></Link>
 				</li>
 				<li>
-					<Link href="https://www.linkedin.com/in/ryankadlick/" target='_blank'><FontAwesomeIcon className={styles.iconListIcon} icon={faLinkedin} /></Link>
+					<Link href="https://www.linkedin.com/in/ryankadlick/" target='_blank' aria-label='LinkedIn'><FontAwesomeIcon className={styles.iconListIcon} icon={faLinkedin} /></Link>
 				</li>
 				<li>
-					<Link href="#" target='_blank'><FontAwesomeIcon className={styles.iconListIcon} icon={faFile} /></Link>
+					<Link href="/resume.pdf" target='_blank' aria-label='Resume'><FontAwesomeIcon className={styles.iconListIcon} icon={faFile} /></Link>
 				</li>
 			</ul>
 		</motion.div>

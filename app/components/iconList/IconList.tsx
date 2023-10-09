@@ -64,7 +64,7 @@ function IconList() {
 							variants={shouldReduceMotion ? reduceMotionVariant : iconsVariant}
 							transition={{ duration: 1, delay }}
 						>
-						<Link href={iconLink.link} className={styles.navLink} aria-label={iconLink.aria}>{iconLink.icon}</Link>
+						<Link href={iconLink.link} className={styles.navLink} aria-label={iconLink.aria} target="_blank">{iconLink.icon}</Link>
 						</motion.li>
 				)})}
       </motion.ul>
