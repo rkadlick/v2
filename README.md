@@ -28,7 +28,6 @@ Thank you to the developers below, who's portfolios and projects gave me inspira
 - [victoreke.com](https://victoreke.com/)
 
 Feel free to fork and take inspiration from this repo, and please give me credit by linking to [ryanismy.name](https://ryanismy.name). Thank you.
-Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
 
 ## Getting Started
 
