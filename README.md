@@ -9,7 +9,7 @@
 </p>
 <p align="center">
   Previous iterations:
-  <a href="https://github.com/rkadlick/rkadlick.github.io" target="_blank">v1</a>,
+  <a href="https://github.com/rkadlick/rkadlick.github.io" target="_blank">v1</a>
 </p>
 
 ![demo](https://raw.githubusercontent.com/rkadlick/v2/main/app/images/screenshot.jpg)
